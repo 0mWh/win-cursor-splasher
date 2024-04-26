@@ -23,7 +23,6 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataRelative = new System.Windows.Forms.Label();
             this.labelRelative = new System.Windows.Forms.Label();
@@ -39,16 +38,20 @@
             this.dataOutlineRadius = new System.Windows.Forms.NumericUpDown();
             this.labelOutlineRadius = new System.Windows.Forms.Label();
             this.dataOutlineTimeout = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.labelUpdateInterval = new System.Windows.Forms.Label();
             this.dataUpdateInterval = new System.Windows.Forms.NumericUpDown();
             this.dataBorderOnly = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabCredits = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPageCredits = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pictureCredit = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkCredits = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataOutlineWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUpdateDistance)).BeginInit();
@@ -57,17 +60,19 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUpdateInterval)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabCredits.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPageCredits.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCredit)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 209F));
             this.tableLayoutPanel1.Controls.Add(this.dataRelative, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelRelative, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.labelLocation, 0, 0);
@@ -82,13 +87,13 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 64);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 72);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dataRelative
             // 
             this.dataRelative.AutoSize = true;
-            this.dataRelative.Location = new System.Drawing.Point(63, 43);
+            this.dataRelative.Location = new System.Drawing.Point(57, 43);
             this.dataRelative.Margin = new System.Windows.Forms.Padding(3);
             this.dataRelative.Name = "dataRelative";
             this.dataRelative.Size = new System.Drawing.Size(25, 13);
@@ -128,7 +133,7 @@
             // dataScreen
             // 
             this.dataScreen.AutoSize = true;
-            this.dataScreen.Location = new System.Drawing.Point(63, 23);
+            this.dataScreen.Location = new System.Drawing.Point(57, 23);
             this.dataScreen.Margin = new System.Windows.Forms.Padding(3);
             this.dataScreen.Name = "dataScreen";
             this.dataScreen.Size = new System.Drawing.Size(19, 13);
@@ -138,7 +143,7 @@
             // dataLocation
             // 
             this.dataLocation.AutoSize = true;
-            this.dataLocation.Location = new System.Drawing.Point(63, 3);
+            this.dataLocation.Location = new System.Drawing.Point(57, 3);
             this.dataLocation.Margin = new System.Windows.Forms.Padding(3);
             this.dataLocation.Name = "dataLocation";
             this.dataLocation.Size = new System.Drawing.Size(25, 13);
@@ -307,17 +312,6 @@
             0});
             this.dataOutlineTimeout.ValueChanged += new System.EventHandler(this.dataOutlineTimeout_ValueChanged);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 69);
-            this.label1.Margin = new System.Windows.Forms.Padding(3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "by 0mWh";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -333,7 +327,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 52);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // labelUpdateInterval
@@ -408,25 +402,25 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 100);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 72);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // tabControl1
+            // tabCredits
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(3, 1);
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(220, 110);
-            this.tabControl1.TabIndex = 15;
+            this.tabCredits.Controls.Add(this.tabPage1);
+            this.tabCredits.Controls.Add(this.tabPage2);
+            this.tabCredits.Controls.Add(this.tabPage3);
+            this.tabCredits.Controls.Add(this.tabPageCredits);
+            this.tabCredits.Location = new System.Drawing.Point(3, 1);
+            this.tabCredits.Multiline = true;
+            this.tabCredits.Name = "tabCredits";
+            this.tabCredits.SelectedIndex = 0;
+            this.tabCredits.Size = new System.Drawing.Size(220, 110);
+            this.tabCredits.TabIndex = 15;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -458,13 +452,66 @@
             this.tabPage3.Text = "Updates";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // tabPageCredits
+            // 
+            this.tabPageCredits.Controls.Add(this.textBox1);
+            this.tabPageCredits.Controls.Add(this.pictureCredit);
+            this.tabPageCredits.Controls.Add(this.label1);
+            this.tabPageCredits.Controls.Add(this.linkCredits);
+            this.tabPageCredits.Location = new System.Drawing.Point(4, 22);
+            this.tabPageCredits.Name = "tabPageCredits";
+            this.tabPageCredits.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageCredits.Size = new System.Drawing.Size(212, 84);
+            this.tabPageCredits.TabIndex = 3;
+            this.tabPageCredits.Text = "Credits";
+            this.tabPageCredits.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 6);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(129, 45);
+            this.textBox1.TabIndex = 9;
+            this.textBox1.Text = "Draw a circle and provide information to help the user to find the mouse.";
+            // 
+            // pictureCredit
+            // 
+            this.pictureCredit.Location = new System.Drawing.Point(141, 6);
+            this.pictureCredit.Name = "pictureCredit";
+            this.pictureCredit.Size = new System.Drawing.Size(65, 59);
+            this.pictureCredit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureCredit.TabIndex = 7;
+            this.pictureCredit.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Source code:";
+            // 
+            // linkCredits
+            // 
+            this.linkCredits.AutoSize = true;
+            this.linkCredits.Location = new System.Drawing.Point(16, 68);
+            this.linkCredits.Name = "linkCredits";
+            this.linkCredits.Size = new System.Drawing.Size(190, 13);
+            this.linkCredits.TabIndex = 5;
+            this.linkCredits.TabStop = true;
+            this.linkCredits.Text = "github.com/0mWh/win-cursor-splasher";
+            this.linkCredits.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkCredits_LinkClicked);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(227, 117);
-            this.Controls.Add(this.tabControl1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Controls.Add(this.tabCredits);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Text = "Cursor Splasher";
@@ -479,12 +526,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataUpdateInterval)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabCredits.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPageCredits.ResumeLayout(false);
+            this.tabPageCredits.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureCredit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -499,7 +548,6 @@
         private System.Windows.Forms.Label labelUpdateDistance;
         private System.Windows.Forms.Label labelOutlineWidth;
         private System.Windows.Forms.NumericUpDown dataOutlineWidth;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown dataOutlineRadius;
         private System.Windows.Forms.Label labelOutlineRadius;
         private System.Windows.Forms.Label labelOutlineTimeout;
@@ -509,11 +557,16 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label labelUpdateInterval;
         private System.Windows.Forms.NumericUpDown dataUpdateInterval;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabCredits;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Label dataRelative;
         private System.Windows.Forms.Label labelRelative;
+        private System.Windows.Forms.TabPage tabPageCredits;
+        private System.Windows.Forms.PictureBox pictureCredit;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkCredits;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
