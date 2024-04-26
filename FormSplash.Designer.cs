@@ -25,7 +25,6 @@ namespace win_cursor_splasher {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Splash));
             this.SuspendLayout();
             // 
             // Splash
@@ -38,7 +37,6 @@ namespace win_cursor_splasher {
             this.ControlBox = false;
             this.Enabled = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Splash";
             this.Opacity = 0.75D;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;

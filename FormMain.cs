@@ -1,35 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace win_cursor_splasher {
     public partial class FormMain : Form {
 
         private readonly Timer t = new Timer();
+        private static readonly Queue<Splash> all = new Queue<Splash>();
+        private readonly Pen pen = new Pen(Color.Red, 10);
+
         private static int outlineRadius = 200,
             outlineWidth = 10,
             outlineTimeout = 1500,
             updateInterval = 500,
             updateDistance = 150;
         private static bool borderOnly = false;
-        private static readonly Queue<Splash> all = new Queue<Splash>();
-        private readonly Pen pen = new Pen(Color.Red, 10);
 
         public FormMain() {
             InitializeComponent();
+            this.Icon = Properties.Resources.icons;
+            this.pictureCredit.Image = Properties.Resources.icons256;
 
-            dataOutlineRadius_ValueChanged(null, null);
-            dataOutlineWidth_ValueChanged(null, null);
-            dataOutlineTimeout_ValueChanged(null, null);
-            dataUpdateDistance_ValueChanged(null, null);
-            dataUpdateInterval_ValueChanged(null, null);
-            dataBorderOnly_CheckedChanged(null, null);
+            { // get values from UI default
+                dataOutlineRadius_ValueChanged(null, null);
+                dataOutlineWidth_ValueChanged(null, null);
+                dataOutlineTimeout_ValueChanged(null, null);
+                dataUpdateDistance_ValueChanged(null, null);
+                dataUpdateInterval_ValueChanged(null, null);
+                dataBorderOnly_CheckedChanged(null, null);
+            }
 
             Point last = Cursor.Position;
             Screen last_s = Screen.PrimaryScreen;
@@ -39,17 +40,19 @@ namespace win_cursor_splasher {
                 Point curr = Cursor.Position;
                 Screen curr_s = PointOnScreen(curr);
 
-                this.dataLocation.Text = $"{curr.X}, {curr.Y}";
-                this.dataScreen.Text = $"{curr_s.DeviceName}";
-                this.dataRelative.Text = $"{curr.X - curr_s.Bounds.Left}, {curr.Y - curr_s.Bounds.Top}";
+                { // display
+                    this.dataLocation.Text = $"{curr.X}, {curr.Y}";
+                    this.dataScreen.Text = $"{curr_s.DeviceName}";
+                    this.dataRelative.Text = $"{curr.X - curr_s.Bounds.Left}, {curr.Y - curr_s.Bounds.Top}";
+                }
 
                 if (borderOnly) {
                     if (curr_s != last_s) {
-                        begin(FindBorder(curr_s, last_s, curr, last));
+                        Begin(FindBorder(curr_s, last_s, curr, last));
                     }
                 } else {
                     if (Dist(curr, last) > updateDistance) {
-                        begin(curr);
+                        Begin(curr);
                     }
                 }
 
@@ -59,23 +62,30 @@ namespace win_cursor_splasher {
             t.Start();
         }
 
+        // recursively find the coordinate of the screen border between two points
         private Point FindBorder(Screen sa, Screen sb, Point pa, Point pb) {
             Point pc = new Point((pa.X + pb.X) / 2, (pa.Y + pb.Y) / 2);
-            if (Dist(pa, pb) < 2) {
-                return pc;
+
+            { // close enough
+                if (Dist(pa, pb) < 2) {
+                    return pc;
+                }
             }
 
-            Screen sc = PointOnScreen(pc);
-            if (sc == sa) {
-                return FindBorder(sc, sb, pc, pb);
-            } else if (sc == sb) {
-                return FindBorder(sa, sc, pa, pc);
+            { // center on border: ensure both points on different screens
+                Screen sc = PointOnScreen(pc);
+                if (sc == sa) {
+                    return FindBorder(sc, sb, pc, pb);
+                } else if (sc == sb) {
+                    return FindBorder(sa, sc, pa, pc);
+                }
             }
 
             return pc;
         }
 
-        private void begin(Point p) {
+        // place a circle on the screen at point p
+        private void Begin(Point p) {
             Splash b = new Splash(outlineRadius, pen);
 
             { // produce
@@ -84,8 +94,9 @@ namespace win_cursor_splasher {
             }
 
             { // expiry
-                Timer tt = new Timer();
-                tt.Interval = outlineTimeout;
+                Timer tt = new Timer {
+                    Interval = outlineTimeout
+                };
                 tt.Tick += (sA, eaA) => {
                     tt.Stop();
                     b.Close();
@@ -108,6 +119,32 @@ namespace win_cursor_splasher {
             }
 
             all.Enqueue(b);
+        }
+
+        // remove all circles up to and including the parameter
+        public static void RemoveUntil(Splash until) {
+            until.Close();
+            while (all.Any() && all.Peek() != until)
+                all.Dequeue().Close();
+        }
+
+        // get the screen that this coordinate lands on
+        public static Screen PointOnScreen(Point mousePoint) {
+            foreach (Screen screen in Screen.AllScreens)
+                if (screen.Bounds.Contains(mousePoint))
+                    return screen;
+            return null;
+        }
+
+        // euclidean distance between two points
+        public static double Dist(Point a, Point b) {
+            return Math.Sqrt(Math.Pow(a.X - b.X, 2D) + Math.Pow(a.Y - b.Y, 2D));
+        }
+
+        #region UI Setting Code
+
+        private void linkCredits_LinkClicked(object sender, EventArgs e) {
+            System.Diagnostics.Process.Start("https://github.com/0mWh/win-cursor-splasher");
         }
 
         private void dataUpdateDistance_ValueChanged(object sender, EventArgs e) {
@@ -137,21 +174,7 @@ namespace win_cursor_splasher {
             outlineTimeout = (int)(this.dataOutlineTimeout.Value * 1000);
         }
 
-        public static Screen PointOnScreen(Point mousePoint) {
-            foreach (Screen s in Screen.AllScreens)
-                if (s.Bounds.Contains(mousePoint))
-                    return s;
-            return null;
-        }
+        #endregion
 
-        public static double Dist(Point a, Point b) {
-            return Math.Sqrt(Math.Pow(a.X - b.X, 2D) + Math.Pow(a.Y - b.Y, 2D));
-        }
-
-        public static void RemoveUntil(Splash until) {
-            until.Close();
-            while (all.Any() && all.Peek() != until)
-                all.Dequeue().Close();
-        }
     }
 }
