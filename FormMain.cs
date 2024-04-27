@@ -15,7 +15,8 @@ namespace win_cursor_splasher {
             outlineWidth = 10,
             outlineTimeout = 1500,
             updateInterval = 500,
-            updateDistance = 150;
+            updateDistance = 150,
+            outlineCount = 3;
         private static bool borderOnly = false;
 
         public FormMain() {
@@ -30,6 +31,7 @@ namespace win_cursor_splasher {
                 dataUpdateDistance_ValueChanged(null, null);
                 dataUpdateInterval_ValueChanged(null, null);
                 dataBorderOnly_CheckedChanged(null, null);
+                dataOutlineCount_ValueChanged(null, null);
             }
 
             Point last = Cursor.Position;
@@ -90,7 +92,7 @@ namespace win_cursor_splasher {
 
             { // produce
                 b.Show();
-                b.Location = new Point(p.X - outlineRadius / 2, p.Y - outlineRadius / 2);
+                b.Locate(p);
             }
 
             { // expiry
@@ -104,16 +106,18 @@ namespace win_cursor_splasher {
                 tt.Start();
             }
 
-            //{ // mouseover?
-            //    b.MouseEnter += (s, ea) => {
-            //        if (Dist(Cursor.Position, b.Location) > outlineWidth) {
-            //            RemoveUntil(b);
-            //        }
-            //    };
-            //}
+            /*
+            { // mouseover?
+                b.MouseEnter += (s, ea) => {
+                    if (Dist(Cursor.Position, b.Location) > outlineWidth) {
+                        RemoveUntil(b);
+                    }
+                };
+            }
+            */
 
             { // force expiry
-                while (all.Count > 2) {
+                while (outlineCount <= all.Count) {
                     all.Dequeue().Close();
                 }
             }
@@ -123,9 +127,9 @@ namespace win_cursor_splasher {
 
         // remove all circles up to and including the parameter
         public static void RemoveUntil(Splash until) {
-            until.Close();
             while (all.Any() && all.Peek() != until)
                 all.Dequeue().Close();
+            all.Dequeue().Close();
         }
 
         // get the screen that this coordinate lands on
@@ -163,6 +167,10 @@ namespace win_cursor_splasher {
 
         private void dataOutlineRadius_ValueChanged(object sender, EventArgs e) {
             outlineRadius = (int)this.dataOutlineRadius.Value;
+        }
+
+        private void dataOutlineCount_ValueChanged(object sender, EventArgs e) {
+            outlineCount = (int)this.dataOutlineCount.Value;
         }
 
         private void dataBorderOnly_CheckedChanged(object sender, EventArgs e) {

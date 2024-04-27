@@ -13,6 +13,7 @@ Application Tabs:
    - width (pixels): how thick is outline of the circle that appears 
    - radius (pixels): also of the circle that appears
    - duration (seconds): how long does the circle stick around?
+   - count: how many circles can be present at once?
 3. Updates
    - only mark screen borders:
      - checked: the circle will only appear if the cursor changes screens.

@@ -43,6 +43,8 @@
             this.dataUpdateInterval = new System.Windows.Forms.NumericUpDown();
             this.dataBorderOnly = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataOutlineCount = new System.Windows.Forms.NumericUpDown();
+            this.labelOutlineCount = new System.Windows.Forms.Label();
             this.tabCredits = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -60,6 +62,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataUpdateInterval)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataOutlineCount)).BeginInit();
             this.tabCredits.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -87,7 +90,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 72);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(189, 103);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dataRelative
@@ -167,7 +170,7 @@
             0,
             0,
             0});
-            this.dataOutlineWidth.Location = new System.Drawing.Point(100, 0);
+            this.dataOutlineWidth.Location = new System.Drawing.Point(94, 0);
             this.dataOutlineWidth.Margin = new System.Windows.Forms.Padding(0);
             this.dataOutlineWidth.Maximum = new decimal(new int[] {
             1000,
@@ -180,7 +183,7 @@
             0,
             0});
             this.dataOutlineWidth.Name = "dataOutlineWidth";
-            this.dataOutlineWidth.Size = new System.Drawing.Size(100, 20);
+            this.dataOutlineWidth.Size = new System.Drawing.Size(95, 20);
             this.dataOutlineWidth.TabIndex = 9;
             this.dataOutlineWidth.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dataOutlineWidth.Value = new decimal(new int[] {
@@ -218,7 +221,7 @@
             0,
             0,
             0});
-            this.dataUpdateDistance.Location = new System.Drawing.Point(100, 0);
+            this.dataUpdateDistance.Location = new System.Drawing.Point(94, 0);
             this.dataUpdateDistance.Margin = new System.Windows.Forms.Padding(0);
             this.dataUpdateDistance.Maximum = new decimal(new int[] {
             -727379969,
@@ -231,7 +234,7 @@
             0,
             0});
             this.dataUpdateDistance.Name = "dataUpdateDistance";
-            this.dataUpdateDistance.Size = new System.Drawing.Size(100, 20);
+            this.dataUpdateDistance.Size = new System.Drawing.Size(95, 20);
             this.dataUpdateDistance.TabIndex = 6;
             this.dataUpdateDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dataUpdateDistance.Value = new decimal(new int[] {
@@ -248,7 +251,7 @@
             0,
             0,
             0});
-            this.dataOutlineRadius.Location = new System.Drawing.Point(100, 20);
+            this.dataOutlineRadius.Location = new System.Drawing.Point(94, 20);
             this.dataOutlineRadius.Margin = new System.Windows.Forms.Padding(0);
             this.dataOutlineRadius.Maximum = new decimal(new int[] {
             1000,
@@ -261,7 +264,7 @@
             0,
             0});
             this.dataOutlineRadius.Name = "dataOutlineRadius";
-            this.dataOutlineRadius.Size = new System.Drawing.Size(100, 20);
+            this.dataOutlineRadius.Size = new System.Drawing.Size(95, 20);
             this.dataOutlineRadius.TabIndex = 10;
             this.dataOutlineRadius.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dataOutlineRadius.Value = new decimal(new int[] {
@@ -289,7 +292,7 @@
             0,
             0,
             65536});
-            this.dataOutlineTimeout.Location = new System.Drawing.Point(100, 40);
+            this.dataOutlineTimeout.Location = new System.Drawing.Point(94, 40);
             this.dataOutlineTimeout.Margin = new System.Windows.Forms.Padding(0);
             this.dataOutlineTimeout.Maximum = new decimal(new int[] {
             1000000,
@@ -302,7 +305,7 @@
             0,
             196608});
             this.dataOutlineTimeout.Name = "dataOutlineTimeout";
-            this.dataOutlineTimeout.Size = new System.Drawing.Size(100, 20);
+            this.dataOutlineTimeout.Size = new System.Drawing.Size(95, 20);
             this.dataOutlineTimeout.TabIndex = 13;
             this.dataOutlineTimeout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dataOutlineTimeout.Value = new decimal(new int[] {
@@ -327,7 +330,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(200, 52);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(189, 83);
             this.tableLayoutPanel2.TabIndex = 4;
             // 
             // labelUpdateInterval
@@ -348,7 +351,7 @@
             0,
             0,
             131072});
-            this.dataUpdateInterval.Location = new System.Drawing.Point(100, 20);
+            this.dataUpdateInterval.Location = new System.Drawing.Point(94, 20);
             this.dataUpdateInterval.Margin = new System.Windows.Forms.Padding(0);
             this.dataUpdateInterval.Maximum = new decimal(new int[] {
             10000,
@@ -361,7 +364,7 @@
             0,
             196608});
             this.dataUpdateInterval.Name = "dataUpdateInterval";
-            this.dataUpdateInterval.Size = new System.Drawing.Size(100, 20);
+            this.dataUpdateInterval.Size = new System.Drawing.Size(95, 20);
             this.dataUpdateInterval.TabIndex = 7;
             this.dataUpdateInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dataUpdateInterval.Value = new decimal(new int[] {
@@ -389,6 +392,8 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.dataOutlineCount, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.labelOutlineCount, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.labelOutlineWidth, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.labelOutlineRadius, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.labelOutlineTimeout, 0, 2);
@@ -397,13 +402,49 @@
             this.tableLayoutPanel3.Controls.Add(this.dataOutlineTimeout, 1, 2);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 72);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(189, 103);
             this.tableLayoutPanel3.TabIndex = 5;
+            // 
+            // dataOutlineCount
+            // 
+            this.dataOutlineCount.Location = new System.Drawing.Point(94, 60);
+            this.dataOutlineCount.Margin = new System.Windows.Forms.Padding(0);
+            this.dataOutlineCount.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.dataOutlineCount.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.dataOutlineCount.Name = "dataOutlineCount";
+            this.dataOutlineCount.Size = new System.Drawing.Size(95, 20);
+            this.dataOutlineCount.TabIndex = 15;
+            this.dataOutlineCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dataOutlineCount.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.dataOutlineCount.ValueChanged += new System.EventHandler(this.dataOutlineCount_ValueChanged);
+            // 
+            // labelOutlineCount
+            // 
+            this.labelOutlineCount.AutoSize = true;
+            this.labelOutlineCount.Location = new System.Drawing.Point(3, 63);
+            this.labelOutlineCount.Margin = new System.Windows.Forms.Padding(3);
+            this.labelOutlineCount.Name = "labelOutlineCount";
+            this.labelOutlineCount.Size = new System.Drawing.Size(35, 13);
+            this.labelOutlineCount.TabIndex = 14;
+            this.labelOutlineCount.Text = "Count";
             // 
             // tabCredits
             // 
@@ -411,11 +452,13 @@
             this.tabCredits.Controls.Add(this.tabPage2);
             this.tabCredits.Controls.Add(this.tabPage3);
             this.tabCredits.Controls.Add(this.tabPageCredits);
-            this.tabCredits.Location = new System.Drawing.Point(3, 1);
+            this.tabCredits.Location = new System.Drawing.Point(0, 0);
+            this.tabCredits.Margin = new System.Windows.Forms.Padding(0);
             this.tabCredits.Multiline = true;
             this.tabCredits.Name = "tabCredits";
+            this.tabCredits.Padding = new System.Drawing.Point(0, 0);
             this.tabCredits.SelectedIndex = 0;
-            this.tabCredits.Size = new System.Drawing.Size(220, 110);
+            this.tabCredits.Size = new System.Drawing.Size(209, 141);
             this.tabCredits.TabIndex = 15;
             // 
             // tabPage1
@@ -424,7 +467,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(212, 84);
+            this.tabPage1.Size = new System.Drawing.Size(201, 115);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Info";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -435,7 +478,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(212, 84);
+            this.tabPage2.Size = new System.Drawing.Size(201, 115);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outline";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -447,7 +490,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(212, 84);
+            this.tabPage3.Size = new System.Drawing.Size(201, 115);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Updates";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -461,7 +504,7 @@
             this.tabPageCredits.Location = new System.Drawing.Point(4, 22);
             this.tabPageCredits.Name = "tabPageCredits";
             this.tabPageCredits.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCredits.Size = new System.Drawing.Size(212, 84);
+            this.tabPageCredits.Size = new System.Drawing.Size(201, 115);
             this.tabPageCredits.TabIndex = 3;
             this.tabPageCredits.Text = "Credits";
             this.tabPageCredits.UseVisualStyleBackColor = true;
@@ -472,15 +515,15 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(129, 45);
+            this.textBox1.Size = new System.Drawing.Size(97, 72);
             this.textBox1.TabIndex = 9;
             this.textBox1.Text = "Draw a circle and provide information to help the user to find the mouse.";
             // 
             // pictureCredit
             // 
-            this.pictureCredit.Location = new System.Drawing.Point(141, 6);
+            this.pictureCredit.Location = new System.Drawing.Point(109, 6);
             this.pictureCredit.Name = "pictureCredit";
-            this.pictureCredit.Size = new System.Drawing.Size(65, 59);
+            this.pictureCredit.Size = new System.Drawing.Size(86, 86);
             this.pictureCredit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureCredit.TabIndex = 7;
             this.pictureCredit.TabStop = false;
@@ -488,7 +531,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 54);
+            this.label1.Location = new System.Drawing.Point(3, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 6;
@@ -497,7 +540,7 @@
             // linkCredits
             // 
             this.linkCredits.AutoSize = true;
-            this.linkCredits.Location = new System.Drawing.Point(16, 68);
+            this.linkCredits.Location = new System.Drawing.Point(8, 95);
             this.linkCredits.Name = "linkCredits";
             this.linkCredits.Size = new System.Drawing.Size(190, 13);
             this.linkCredits.TabIndex = 5;
@@ -509,7 +552,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(227, 117);
+            this.ClientSize = new System.Drawing.Size(209, 141);
             this.Controls.Add(this.tabCredits);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -526,6 +569,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataUpdateInterval)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataOutlineCount)).EndInit();
             this.tabCredits.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -568,5 +612,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkCredits;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.NumericUpDown dataOutlineCount;
+        private System.Windows.Forms.Label labelOutlineCount;
     }
 }
